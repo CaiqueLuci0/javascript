@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <p>Digite o numero de votos do candidato A: <input type="text" id="input_candidatoA"></p>
+    <p>Digite o número de votos do candidato B: <input type="text" id="input_candidatoB"></p>
+    <p>Digite o número de votos brancos <input type="text" id="input_branco"></p>
+    <p>Digite o número de votos nulos <input type="text" id="input_nulo"></p>
+    <button onclick="resultadoEleiçao()">Exibir resultado</button>
+
+    <div id="div_eleiçao"></div>
+</body>
+</html>
+
+<script>
+    function resultadoEleiçao() {
+        var candidatoA = input_candidatoA.value;
+        var candidatoB = input_candidatoB.value;
+        var branco = input_branco.value;
+        var nulo = input_nulo.value;
+        var invalidos = Number(branco) + Number(nulo);
+
+        var votostotais = Number(candidatoA) + Number(candidatoB) + Number(invalidos);
+        var prcCandA = ( Number(candidatoA) * 100 ) / Number(votostotais);
+        var prcCandB = ( Number(candidatoB) * 100) / Number(votostotais);
+        var prcInvalidos = ( Number(invalidos) * 100) / Number(votostotais);
+        
+        div_eleiçao.innerHTML = `
+        O número total de votos é: ${votostotais}% <br>
+        A porcentagem de votos do candidato A é: ${prcCandA}% (${candidatoA} votos) <br>
+        A porcentagem de votos canditado B é: ${prcCandB}% (${candidatoB} votos) <br>
+        A porcentagem de votos nulos é: ${prcInvalidos}% (${invalidos} votos) <br>
+        
+        `
+        
+    }
+</script>

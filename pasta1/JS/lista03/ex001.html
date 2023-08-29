@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 1</title>
+</head>
+<body>
+    <p>Insira o número de horas que você dormiu esta noite: <input type="text" id="input_horas"></p>
+    <br>
+    <button onclick="resultado()">Exibir resultado</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function resultado() {
+        var horas = input_horas.value
+        var fase1 = (Number(horas) * 5) / 100;
+        var fase2 = (Number(horas) * 45) / 100;
+        var fase3 = (Number(horas) * 30) /100;
+        var faseRem = (Number(horas) * 20) /100;
+
+        div_resultado.innerHTML = `Esta noite você passou: <br>
+        ${fase1} horas na fase 1; <br>
+        ${fase2} horas na fase 2; <br>
+        ${fase3} horas na fase 3; <br>
+        ${faseRem} horas na fase rem.`
+        
+    }
+</script>
