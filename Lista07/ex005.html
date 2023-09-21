@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- a) Pergunte uma nota de um aluno 
+
+ -->
+Insira a nota do aluno <input id="input_nota">
+<br>
+<button onclick="Avaliaraluno()">Avaliar aluno</button>
+</body>
+</html>
+
+<script>
+//     b) Ao clicar em "Avaliar aluno"... 
+
+// c) Caso a nota for menor que 6, exibir um alert com a frase "Aluno não aprovado" 
+
+// d) Caso a nota seja entre 8,5 e 10, exibir um alert com a frase "Aluno Exemplar!" 
+
+// e) Caso a nota for entre 6 e menor que 8,5, exibir um alert com a frase "Aluno comum e aprovado" 
+    function Avaliaraluno() {
+        var nota = Number(input_nota.value);
+        if (nota < 6) {
+            alert(`Aluno não aprovado`)
+        } else if (nota >= 6 && nota < 8.5){
+            alert(`Aluno comum e aprovado`)
+        } else {
+            alert(`Aluno exemplar`)
+        }
+        
+    }
+</script>

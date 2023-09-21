@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de média</title>
+</head>
+<body>
+    <h1>CALCULO DE MÉDIA</h1>
+    <input type="text" id="nota1">
+    <input type="text" id="nota2">
+    <button onclick="calcularmedia()">Calcular</button>
+</body>
+</html>
+
+<script>
+    function calcularmedia() {
+        var valor1 = Number(nota1.value);
+        var valor2 = Number(nota2.value);
+        var resultado = (valor1 + valor2) /2;
+
+        alert (`A média entre ${valor1} e ${valor2} é ${resultado}`);
+        
+    }
+
+
+</script>

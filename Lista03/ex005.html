@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+</head>
+<body>
+    <h1>Exercicio 5</h1>
+    <p>Insira o valor da passagem de onibus: <input type="text" id="input_preco"></p>
+    <p>Insira a quantidade de viagens que você faz mensalmente:<input type="text" id="input_viagem"></p>
+    <p>Insira a distância entre a sua casa e o seu trabalho (KM): <input type="text" id="input_distancia"></p>
+    <button onclick="economia()">Ver economia</button>
+
+    <DIV id="div_economia"></DIV>
+</body>
+</html>
+
+<script>
+    function economia() {
+        var preco = Number (input_preco.value)
+        var viagem = Number(input_viagem.value)
+        var distancia = Number(input_distancia.value)
+        var prcOnibus = (viagem * 90) /100
+        var prcUber= (viagem * 10) /100
+        var precoUber = (0.75 * prcUber) * distancia
+        var precoOnibus = prcOnibus * preco
+        var precoFinal = precoUber + precoOnibus
+
+
+        div_economia.innerHTML = `
+        <br>
+        <center> Você vai gastar R$${precoFinal} por mês com transporte. </center>
+        
+        `
+    }
+</script>

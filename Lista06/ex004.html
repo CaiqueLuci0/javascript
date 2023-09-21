@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira o peso da criança <input id="input_pesoC">
+    <button onclick="analisar()">analisar</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+//     Abaixo do peso (se peso até 13.5kg) 
+
+// Acima do peso (se peso maior que 21.2kg) 
+
+// Peso na média (se peso maior que 13.5kg até 21.2kg) 
+
+// Peso perfeito (se o peso for exatamente 18.3kg) 
+    function analisar() {
+        var peso = input_pesoC.value;
+        if (peso == 18.3) {
+            div_resultado.innerHTML = `Peso Perfeito`
+        } else if (peso <= 13.5) {
+            div_resultado.innerHTML = `Abaixo do peso`
+        } else if (peso <= 21.2) {
+            div_resultado.innerHTML = `Peso na média`
+        } else {
+            div_resultado.innerHTML = `Acima do peso`
+        };
+    }
+</script>

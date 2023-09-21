@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execício 4</title>
+</head>
+<body>
+    <p>Insira o sabor da pizza: <input type="text" id="input_sabor"></p>
+    <p>Insira o valor da pizza: <input type="text" id="input_valor"></p>
+    <p>Insira o número de amigos que irão rachar a pizza <input type="text" id="input_amigos"></p>
+    <button onclick="calcular()">CALCULAR</button>
+
+    <div id="div_pizza"></div>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var sabor = input_sabor.value
+        var valor = Number(input_valor.value)
+        var amigos = Number(input_amigos.value)
+        var colab = valor / amigos
+
+        div_pizza.innerHTML = `   
+        
+        Cada amigo vai colaborar com R$${colab} para a pizza de ${sabor}.
+
+`
+    
+    }
+</script>

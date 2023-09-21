@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>retangulo 1</h1>
+    x0 <input id="input_x0_r1" type="number" min="0" max="5">
+    y0 <input id="input_y0_r1" type="number" min="0" max="5">
+    x1 <input id="input_x1_r1" type="number" min="0" max="5">
+    y1 <input id="input_y1_r1" type="number" min="0" max="5">
+
+    <h1>retangulo 2</h1>
+    x0 <input id="input_x0_r2" type="number" min="0" max="5">
+    y0 <input id="input_y0_r2" type="number" min="0" max="5">
+    x1 <input id="input_x1_r2" type="number" min="0" max="5">
+    y1 <input id="input_y1_r2" type="number" min="0" max="5">
+
+    <button onclick="chkcoli()">calcular</button>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function chkcoli() {
+        var x0r1 = Number(input_x0_r1.value);
+        var y0r1 = Number(input_y0_r1.value);
+        var x1r1 = Number(input_x1_r1.value);
+        var y1r1 = Number(input_y1_r1.value);
+
+        var x0r2 = Number(input_x0_r2.value);
+        var y0r2 = Number(input_y0_r2.value);
+        var x1r2 = Number(input_x1_r2.value);
+        var y1r2 = Number(input_y1_r2.value);
+    
+    // No plano cartesiano, os inputs que se encontram são sempre x1r1 com x0r2
+        if (x1r1 >= x0r2 + 1 ) {
+             div_resultado.innerHTML = `0`
+        };
+
+         if (y0r2 >= y1r1 + 1) {
+            div_resultado.innerHTML = `0`
+        };
+
+        if (x1r1 < x0r2  + 1) {
+            div_resultado.innerHTML = `1`
+            if (x1r1 <= x0r2 - 1) {
+                div_resultado.innerHTML = `0`
+            };
+        };
+    
+
+        if (y0r2 < y1r1  + 1 ) {
+             div_resultado.innerHTML = `1`
+             if (y0r2 <= y1r1 - 1 ) {
+             div_resultado.innerHTML = `0`
+        }; 
+        };  
+
+        if (x0r1 == x0r2) {
+            if (y0r1 == y0r2) {
+                if (x1r1 == x1r2){
+                    if (y1r1 == y1r2) {
+                        div_resultado.innerHTML = `1`
+                    };
+                };
+            };
+        };
+
+        if (x1r1 == y0r2) {
+            div_resultado.innerHTML = `1`
+        };
+
+        if (y0r1 == x1r2) {
+            div_resultado.innerHTML = `1`
+        };
+    
+        if (x1r1 == x1r2) {
+            div_resultado.innerHTML = `1`
+        };
+
+        if (x0r1 == x0r2) {
+            div_resultado.innerHTML = `1`
+        };
+};
+</script>

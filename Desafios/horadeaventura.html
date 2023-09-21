@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora de aventura</title>
+</head>
+<body>
+    <div id="div_cabecalho" style="background-color:#00BFFF; height: 250;
+    text-align: center;">
+        <img src="https://cn.i.cdn.ti-platform.com/cnlatam/content/8/showpage/hora-de-aventura/ar/showlogo.png" height="200px">
+    </div>
+
+    <div id="div_input" 
+    style="border-radius: 50px; 
+     background-color: aquamarine ; 
+     height:fit-content; 
+     width: 1310px; 
+     text-align: center; 
+     border-style: solid;
+     border-color: #4169E1;
+     border-width: 10px;
+     font-family: Arial, Helvetica, sans-serif;
+     "
+    
+     >
+        <h1 style="text-align: center; font-size: 60px;">Ajude BMO</h1>
+
+        <img style=" width: 200px;" src="https://static.wikia.nocookie.net/outra-semana-no-cartoon-network-br/images/5/56/Beemo_vector_by_adrienneorpheus-d3k9wnf.png/revision/latest?cb=20160209205633&path-prefix=pt-br">
+        <h2>Jake e Finn pediram para BMO os ajudar a encontrar qual pode ser o reino de suas próximas aventuras,
+        <br> porém BMO ainda não sabe como definir isso, sendo assim nós iremos ajudá-los!</h2>
+
+        
+        <p>Insira o seu nome: <br> <input id="input_nome" placeholder="Jake"> </p>
+
+        <p>Insira sua idade: <br> <input type="number" id="input_idade" max="1000" min="0"></p>
+
+        <p>Insira nome do ultimo reino que se aventurou: <br> <input id="input_reino" placeholder="Gelado"> </p>
+
+        <p>Insira a quantidade de inimigos que derrotou: <br> <input id="input_qtdinimigos" placeholder="0" min="0"> </p>
+
+        <p>Insira sua quantidade de moedas: <br> <input type="number" id="input_moedas" min="0"></p>
+
+        <button onclick="horadaaventura()">HORA DA AVENTURA !</button>
+    </div>
+
+    <div id="div_espaco" style="height: 100px;"></div>
+
+    <div id="div_conteudo">
+
+     </div>
+
+    <style>
+        body {
+            background-color: #00BFFF;
+        }
+    </style>
+</body>
+</html>
+
+<script>
+    function horadaaventura() {
+        var nome = input_nome.value;
+        var idade = Number(input_idade.value);
+        var reino = input_reino.value;
+        var qtdInimigos = Number(input_qtdinimigos.value);
+        var moedas = Number(input_moedas.value);
+
+        if (reino == "doce") {
+
+            if (moedas >80) {
+
+                if (idade >=10){
+                    div_conteudo.innerHTML = `
+                    <div style="border-radius: 50px; 
+                    background-color: aquamarine ; 
+                    height:fit-content; 
+                    width: 1310px; 
+                    text-align: center; 
+                    border-style: solid;
+                    border-color: #4169E1;
+                    border-width: 10px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    ">
+
+                    <h1> Bem-vindo ao reino de fogo </h1>
+
+                    <img style="height:400px;"src="https://static.wikia.nocookie.net/tudosobrehoradeaventura/images/1/12/Flame_Queen.png/revision/latest?cb=20170818001156&path-prefix=pt-br">
+
+                    <p>Olá ${nome}, que bom te ver por aqui. Ao entrar no reino de fogo o seu dinheiro ganhará um acréscimo de 8% em moedas de ouro que será ${moedas * 0.08} moedas, sendo assim o valor total do seu dinheiro agora será de ${moedas * 1.08} moedas
+                    </p>
+                    </div>`
+
+
+                    alert(`Tome cuidado para não se apaixonar pela princesa de fogo!`)
+                } else {
+
+                    div_conteudo.innerHTML= ` `
+
+                    alert(`você não pode ir para o proximo reino porque sua idade é ${idade}. A idade mínima é 10`)
+                };
+
+            } else {
+                
+                div_conteudo.innerHTML= ` `
+
+                alert(`você não pode ir para o próximo reino porque seu número de moedas é ${moedas}. O dinheiro necessário é 81`)
+                };
+            
+        };
+
+        if (reino == "fogo") {
+
+            if (moedas >= 500) {
+
+                if (idade < 14) {
+                    div_conteudo.innerHTML = `
+                    <span style=" 
+                    height:fit-content; 
+                    width: 1310px; 
+                    text-align: center; 
+                    font-family: Arial, Helvetica, sans-serif;
+                    ">
+
+                    <h1> Bem-vindo ao reino Gelado </h1>
+
+                    <img style="height: 400px;" src="https://www.pngall.com/wp-content/uploads/11/Adventure-Time-No-Background.png">
+
+
+                   <p> Olá ${nome}, que bom te ver por aqui. Ao entrar no reino de gelo o seu dinheiro sofrerá uma perda de 13% em moedas de ouro que será ${moedas * 0.13} moedas, sendo assim o valor total do seu dinheiro agora será de ${moedas - (moedas * 0.13)} moedas</p>
+                    </span>`
+
+                    alert(`Dê um olá ao Gunter por ele ser um pinguim maneiro`)
+
+                    
+
+                } else {
+                    div_conteudo.innerHTML = ``
+                    alert(`Você não pode partir para o próximo reino porque tem mais de 14 anos.`)
+                };
+            } else {
+                div_conteudo.innerHTML = ``
+                alert(`Você não pode partir para o próximo reino porque seu ouro é ${moedas}. O necessário é 500.`)
+            };
+        };
+
+        if (reino == "gelado") {
+
+            if (moedas >= 3000) {
+
+                if (moedas <=5000) {
+
+                    if (idade >=15) {
+
+                        if(idade <=17) {
+
+                            if(qtdInimigos <60) {
+
+                                div_conteudo.innerHTML = `
+                                <h1> Bem-vindo ao reino Geleca! </h1>
+
+                                <img src="https://static.wikia.nocookie.net/tudosobrehoradeaventura/images/3/38/Slime.png/revision/latest?cb=20120725204402&path-prefix=pt-br">
+
+                                <p> Olá ${nome}, que bom te ver por aqui. Ao entrar no reino de geleca o seu dinheiro sofrerá uma perda de 31% em moedas de ouro que será ${moedas * 0.31} moedas, porém haverá um acréscimo de 2000 moedas de ouro, sendo assim o valor total do seu dinheiro agora será de ${moedas - (moedas * 0.31) + 2000} moedas </p>
+                                `
+                                alert (`Tome cuidado com as amoebas que surgirem pelo caminho`)
+
+                            } else {
+                                div_conteudo.innerHTML = ``
+
+                                alert (`Você não pode ir para o proximo reino porque você matou ${qtdInimigos}. O máximo permitido neste reino é 59.`)
+                            };
+
+                        } else {
+                            div_conteudo.innerHTML = ``
+                            alert(`Você não pode ir para o proximo reino porque sua idade é maior do que 17.`)
+                        };
+
+                    } else {
+                        div_conteudo.innerHTML = ``
+                        alert (`Você não pode ir para o proximo reino porque sua idade é menor do que 15.`)
+                    };
+
+                } else {
+                    div_conteudo.innerHTML = ``
+                    alert(`Você não pode ir para o proximo reino porque seu ouro é maior do que 5000.`)
+                };
+
+            } else {
+                div_conteudo.innerHTML = ``
+                alert(`Você não pode ir ao próximo reino porque seu ouro é menor que 3000`)
+            };
+        };
+
+        if (reino == "geleca") {
+            if (moedas >=5001) {
+
+                if (moedas <=8999) {
+
+                    if (idade >=19) {
+
+                        if (idade <=32) {
+
+                            if(qtdInimigos >=100) {
+
+                                if(qtdInimigos <=150) {
+
+                                    div_conteudo.innerHTML = `
+                                    <div style="border-radius: 50px; 
+                                    background-color: aquamarine ; 
+                                    height:fit-content; 
+                                    width: 1310px; 
+                                    text-align: center; 
+                                    border-style: solid;
+                                    border-color: #4169E1;
+                                    border-width: 10px;
+                                    font-family: Arial, Helvetica, sans-serif;
+                                    ">
+
+                                    <h1> Bem-vindo ao reino de Caroço! </h1>
+
+                                    <img style="height:400px;"src="https://static.wikia.nocookie.net/tudosobrehoradeaventura/images/c/c3/Caro%C3%A7o.png/revision/latest?cb=20150329051355&path-prefix=pt-br">
+
+                                    <i>Olá ${nome}, que bom te ver por aqui. Ao entrar no reino de caroço o seu dinheiro ganhará um acréscimo de 28.6% em moedas de ouro que será ${moedas * 0.2806} moedas, sendo assim o valor total do seu dinheiro agora será de ${moedas + (moedas * 0.2806)} moedas 
+                                    </i>
+                                    </div>`
+
+                                alert(`Mande um abraço para a princesa caroço`)
+
+                                } else {
+                                    div_conteudo.innerHTML = ``
+                                    alert(`Você não pode ir para o próximo reino porque derroutu mais de 150 inimigos. (${qtdInimigos})`)
+                                };
+
+                            } else {
+                                div_conteudo.innerHTML = ``
+                                alert(`Você não pode ir para o próximo reino porque derrotou menos de 100 inimigos. (${qtdInimigos})`)
+                            };
+
+                        } else {
+                            div_conteudo.innerHTML = ``
+                            alert(`Você não pode ir para o proximo reino porque sua idade é maior do que 32.`)
+                        };
+
+                    } else {
+                        div_conteudo.innerHTML = ``
+                        alert(`Você não pode ir para o proximo reino porque sua idade é menor do que 19.`)
+                    };
+
+                } else {
+                    div_conteudo.innerHTML = ``
+                    alert(`Você não pode ir para o proximo reino por que seu ouro é maior do que 8999 (${moedas}).`)
+                };
+
+            } else {
+                div_conteudo.innerHTML = ``
+                alert(`Você não pode prosseguir para o proximo reino porque sua quantidade de moedas é menor que 5001 (${moedas})`)
+            };
+        };
+
+        if (reino == "caroço") {
+
+            if(moedas >9000) {
+
+                if (qtdInimigos>=200) {
+                    
+                    if (idade >= 754) {
+
+                        if(idade <= 1000) {
+
+                            var acre = moedas + ( moedas * 0.62098 );
+
+                            div_conteudo.innerHTML = `
+                        <div style="border-radius: 50px; 
+                        background-color: aquamarine ; 
+                        height:fit-content; 
+                        width: 1310px; 
+                        text-align: center; 
+                        border-style: solid;
+                        border-color: #4169E1;
+                        border-width: 10px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        ">
+
+                        <h1> Bem-vindo ao reino dos Vampiros! </h1>
+
+                        <img style="height:400px;"src="https://assets.stickpng.com/images/5c80f7ab72f5d9028c17ed30.png">
+
+                        <b>Olá ${nome}, que bom te ver por aqui. Ao entrar no reino dos vampiros o seu dinheiro ganhará um acréscimo de 62.98% em moedas de ouro e perderá desse total 87.12% em moedas de ouro que será o equivalente a ${acre * 0.87012} moedas, sendo assim o valor total do seu dinheiro agora será de ${acre - (acre * 0.87012)} moedas 
+                        </b>
+                        </div>`
+
+                        alert(`A cor vermelha vai salvar a sua vida nesse lugar`)
+
+                            
+                        } else {
+                            alert(`Você não pode ir para o proximo reino porque sua idade é maior do que 1000 (${idade}).`)
+                    };
+
+                    } else {
+                        alert(`Você não pode ir para o proximo reino porque sua idade é menor do que 754 (${idade}).`)
+                    };
+
+                } else{
+                    alert(`Você não pode ir para o proximo reino porque a quantidade de inimigos derrotados é menor do que 200 (${qtdInimigos})`)
+                };
+
+            } else{
+                alert(`Você não pode ir para o proximo reino porque sua quantidade de moédas é menor que 9001 (${moedas})`)
+            };
+        };
+    };
+</script>

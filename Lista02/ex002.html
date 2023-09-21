@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 2</title>
+</head>
+<body>
+    <h1>exercício 2</h1>
+    <p>Insira sua altura: <input type="text" id="altura"></p>
+    <p>Insira seu peso: <input type="text" id="peso"></p>
+    <br>
+    <button onclick="falecomigo()">Fale comigo</button>
+    
+</body>
+</html>
+
+<script>
+ 
+    function falecomigo() {
+        var tamanho = altura.value;
+        var kg = peso.value;
+        alert(`Olá! você tem ${tamanho} de altura e pesa ${kg} quilos.`);
+    }
+</script>

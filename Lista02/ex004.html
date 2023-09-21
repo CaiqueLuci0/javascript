@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 4</title>
+</head>
+<body>
+    <h1>exercício 4</h1>
+    <p>Insira o nome da sua rua: <input type="text" id="logradouro"></p>
+    <p>Insira p numero da sua casa: <input type="text" id="numero"></p>
+    <br>
+    <button onclick="cadastrar()">Cadastrar</button>
+</body>
+</html>
+
+<script>
+    function cadastrar() {
+        var rua = logradouro.value;
+        var casa = numero.value;
+        alert(`O nome da sua rua é : ${rua}`);
+        alert(`O número da sua casa é : ${casa}`);
+        
+    }
+</script>

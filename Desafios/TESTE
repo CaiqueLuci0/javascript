@@ -1,0 +1,16 @@
+ if (x1r1 >= x0r2 + 1 ) {
+             div_resultado.innerHTML = `0`
+        };
+
+         if (y0r2 >= y1r1 + 1) {
+            div_resultado.innerHTML = `0`
+        };
+
+        if (x1r1 < x0r2 + 1) {
+            div_resultado.innerHTML = `1`
+        };
+    
+
+        if (y0r2 < y1r1 + 1 ) {
+             div_resultado.innerHTML = `1`
+        };  

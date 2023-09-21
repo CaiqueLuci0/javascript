@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 6</title>
+</head>
+<body>
+    <h1>TODO MUNDO ADORA PIZZA! (exercício 6)</h1>
+    <p>Insira o valor da pizza: <input type="text" id="preçopizza"></p>
+    <p>Insira o número de pessoas que irão rachar a pizza: <input type="text" id="qtdamigos"></p>
+    <br>
+    <button onclick="lovepizza()">#lovePizza</button>
+</body>
+</html>
+
+<script>
+    function lovepizza() {
+        var preço = preçopizza.value;
+        var amigos = qtdamigos.value;
+        var resultado = preço / amigos;
+        alert (`Cada um dos ${amigos} amigos vai pagar R$ ${resultado}`);
+        
+    }
+</script>
