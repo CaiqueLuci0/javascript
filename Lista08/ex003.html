@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 3. Crie um programa o qual ajudará o governo a saber se ele dará a ajuda emergencial ao Covid19 a um cidadão: 
+a) Solicite o valor da renda individual do usuário 
+b) Solicite o valor da renda familiar do usuário 
+c) Ao clicar em "Terei o benefício", podem aparecer as seguintes mensagens: 
+   "Você terá direito ao auxílio", caso renda individual for até 2000 ou caso a renda familiar for até 3000 
+   "Sem direito ao auxílio", caso contrário  -->
+Renda individual: <input type="text" id="input_rendaInd"><br>
+Renda familiar: <input id="input_rendafml"><br>
+<button onclick="terei()"> Terei benefício </button>
+<div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function terei() {
+        var rendaIndividual = Number(input_rendaInd.value);
+        var rendaFml = Number(input_rendafml.value);
+
+        if (rendaIndividual <= 2000 || rendaFml <= 3000) {
+            div_resultado.innerHTML = `Você terá direito ao auxílio`
+        } else {
+            div_resultado.innerHTML = `Sem direito ao auxílio`
+        };
+    };
+</script>
