@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- a) Pergunte o intervalo da altura desejada para os próximos pilotos (altura inicial e altura final de seleção) A altura inicial tem que ser maior que 1 e a altura final tem que ser maior que a altura inicial, caso contrário emitir mensagem de alerta E NÃO SEGUIR EM FRENTE. 
+
+b) Pergunte o nome e a altura do candidato a piloto. 
+
+c) Emitir uma das duas mensagens abaixo sem apagar as mensagens anteriores: 
+
+1) “O candidato XXXXX com altura de 9,99 participará do processo de seleção de piloto”, caso a altura do candidato esteja no intervalo informado. 
+
+2) “Infelizmente o candidato XXXXX com altura de 9,99 não atende os requisitos”, caso a altura do candidato NÃO esteja no intervalo informado.  -->
+Altura inicial: <input type="text" id="input_alturaMinima"> <br>
+Altura final: <input type="text" id="input_alturaMaxima"> <br>
+Nome: <input id="input_nome"> <br>
+Altura piloto: <input id="input_alturaP"> <br>
+
+<button onclick="participar()">Validar candidato</button>
+<div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+function participar() {
+        
+    
+    var alturaMinima = Number(input_alturaMinima.value);
+    var alturaMaxima = Number(input_alturaMaxima.value);
+    var nome = input_nome.value;
+    var alturaPiloto = Number(input_alturaP.value);
+    
+    if (alturaMinima >= 1 && alturaMinima <= alturaMaxima ) {
+            if (alturaPiloto >= alturaMinima && alturaPiloto <= alturaMaxima) {
+                div_resultado.innerHTML += `O candidato ${nome} com altura de ${alturaPiloto} participará do processo de seleção de piloto <br>`
+            } else {
+                div_resultado.innerHTML += `Infelizmente o candidato ${nome} com altura de ${alturaPiloto} não atende os requisitos <br>`
+            };
+    } else{
+        alert(`Valores inválidos`)
+    };
+};
+</script>
