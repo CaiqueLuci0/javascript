@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- a) Tenha o seguinte texto no topo: 
+
+Calculadora de cansaço do aluno SPTech. 
+
+b) Tenha o texto "Meio de transporte" e uma input para o usuário inserir o meio de transporte dele, podendo ser: 
+
+    Ônibus 
+
+    Metrô 
+
+    Carro 
+
+    Bicicleta 
+
+    Lotação 
+
+c) Tenha o botão "Calcular cansaço" que ao clicar mostrar em um alerta o nível de cansaço do usuário. 
+
+d) Se o meio de transporte escolhido for "Carro" OU "Bicicleta", exiba em um alert: "Tá tranquilo ..." 
+
+e) Se o meio de transporte escolhido for "Metrô", exiba em um alert: "Um pouco cansado".  -->
+
+<!-- f) Se o meio de transporte escolhido for "Ônibus" OU "Lotação", exiba em um alert: "Vish ... vive cansado."  -->
+<h1>Calculadora de cansaço do aluno SPTech</h1>
+Meio de transporte: <input type="text" id="input_tipoTrans"><br>
+<button onclick="calcular()">Calcular cansaço</button>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var transporte = input_tipoTrans.value;
+
+        if (transporte == "carro" || transporte == "bicicleta"){
+            alert(`Tá tranquilo`)
+        } else if (transporte == "metrô") {
+            alert(`Um pouco cansado`)
+        } else if (transporte == "lotação" || transporte == "ônibus"){
+            alert(`Vish... vive cansado`)
+        };
+    };
+</script>
