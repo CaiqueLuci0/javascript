@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Crie um programa em HTML/JS o qual:
+a) Pergunte qual o salário do usuário
+b) Tenha um botão "Confirmar salário". Ao ser clicado, ele deixe aparecendo na tela uma frase assim "Grana atual: R$X"
+c) Tenha um botão "Pagar conta de 100", que, ao ser clicado, ele reduza a "Grana atual" em 100 e atualize essa informação na tela
+d) Tenha um botão "Pagar conta de 500", que, ao ser clicado, ele reduza a "Grana atual" em 500 e atualize essa informação na tela
+e) Tenha um botão "Ganhar 2000 na loteria", que, ao ser clicado, ele aumente a "Grana atual" em 2000 e atualize essa informação na tela -->
+Salario: <input type="text" id="input_salario">
+<Button onclick="confirmarSalario()">Confirmar salário</Button>
+<button onclick="pagar100()">Pagar conta de 100</button>
+<button onclick="pagar500()">Pagar conta de 500</button>
+<button onclick="ganhar2000()">Ganhar 2000 na loteria</button>
+Grana atual: R$<span id="div_resultado">0</span>
+</body>
+</html>
+
+<script>
+    var dinheiro = 0
+    function confirmarSalario(){
+        var salario = Number(input_salario.value);
+        dinheiro = salario;
+        div_resultado.innerHTML = dinheiro;
+    }
+    function pagar100(){
+        dinheiro -= 100
+        div_resultado.innerHTML = dinheiro
+    }
+    function pagar500(){
+        dinheiro -=500
+        div_resultado.innerHTML = dinheiro
+    }
+    function ganhar2000(){
+        dinheiro += 2000
+        div_resultado.innerHTML = dinheiro
+    }
+</script>

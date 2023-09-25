@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 3) Tio Patinhas está ensinando seus netos a guardar dinheiro; Ajude-o criando um programa em HTML/JS o qual:
+a) Exiba na tela, logo de início, na cor azul:
+Total guardado no cofrinho: R$0
+Depósitos efetuados: 0
+Retiradas efetuadas: 0
+
+b) Ao clicar num botão "Depositar 0,50", o valor depositado aumente em R$0,50 e a quantidade de depósitos aumente em 1. Atualize essas informações na tela;
+c) Ao clicar num botão "Depositar 2,00", o valor depositado aumente em R$2,00 e a quantidade de depósitos aumente em 1. Atualize essas informações na tela;
+d) Ao clicar num botão "Retirar 0,50" o valor depositado é diminuído em R$0,50 e a quantidade de retiradas aumenta em 1. Atualize essas informações na tela;
+e) Ao clicar num botão "Retirar" o valor depositado é diminuído de acordo com o campo "Valor", disponível na tela.
+ -->
+    <div id="div_resultado" style="color:blue">
+    Total guardado no cofrinho: R$<span id="span_guardado">0</span><br>
+    Depósitos efetuados: <span id="span_deposito">0</span> <br>
+    Retiradas efetuadas: <span id="span_retirada">0</span> <br>
+    </div>
+    <button onclick="depositar050()">Depositar 0,50</button>
+    <button onclick="depositar200()">Depositar 2,00</button>
+    <button onclick="retirar050()">Retirar 0,50</button><br>
+    <input type="text" id="input_valorRetirada">
+    <button onclick="retirarValor()">Retirar</button>
+    
+
+</body>
+</html>
+
+<script>
+    var guardado = 0;
+    var deposito = 0;
+    var retirada = 0;
+    function depositar050() {
+        guardado += 0.50;
+        deposito += 1;
+        span_deposito.innerHTML = deposito;
+        span_guardado.innerHTML = guardado;
+    }
+    function depositar200() {
+        guardado += 2;
+        deposito += 1;
+        span_deposito.innerHTML = deposito;
+        span_guardado.innerHTML = guardado;
+    }
+
+    function retirar050() {
+        guardado -= 0.50;
+        retirada += 1;
+        span_guardado.innerHTML = guardado;
+        span_retirada.innerHTML = retirada;
+    }
+
+    function retirarValor() {
+        var retirar = Number(input_valorRetirada.value);
+        guardado -= retirar;
+        if (retirar > 0) {
+        retirada += 1;
+        span_guardado.innerHTML = guardado;
+        span_retirada.innerHTML = retirada;
+        }
+    }
+
+</script>

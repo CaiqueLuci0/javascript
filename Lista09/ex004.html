@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 4) Crie um programa em HTML/JS o qual:
+a) Tenha, no topo da página os botões "Mover p/ Esquerda" e "Mover p/ Direita", lado a lado
+b) Ao lado dos botões, uma caixa de entrada de texto com a indicação "Quantos pixels"
+c) Abaixo de tudo isso uma figura do Bart Simpson num skate
+d) Ao clicar no "Mover p/ Esquerda", a figura do Bart se move para a esquerda em X pixels, conforme o valor da caixa de entrada de texto
+e) Ao clicar no "Mover p/ Direita", a figura do Bart se move para a direita em X pixels, conforme o valor da caixa de entrada de texto
+#FicaDica: Use a propriedade de estilo "margin-left", a qual, via Javascript é acessível com "marginLeft". -->
+<button onclick="esquerda()">Mover p/ Esquerda</button>
+<button onclick="direita()">Mover p/ Direita</button><br>
+Quantos pixels <input type="text" id="input_px"><br>
+<img id="img_bart" src="https://drukowanka.pl/wp-content/uploads/2022/06/Kolorowanka-Bart-Simpson-na-deskorolce.jpg" style="margin-left: 0px; margin-right: 0px; width: 300px;">
+
+</body>
+</html>
+
+<script>
+    var direEsquerda = 0;
+    function esquerda() {
+        var px = Number(input_px.value);
+        direEsquerda -= px;
+        if(direEsquerda <= -300){
+            direEsquerda = 1200
+        }
+        img_bart.style.marginLeft = direEsquerda + "px"
+    }
+    function direita() {
+        var px = Number(input_px.value);
+        direEsquerda += px
+        if(direEsquerda >= 1400){
+            direEsquerda = -60
+        }
+        img_bart.style.marginLeft = direEsquerda + "px"
+    }
+
+    
+
+    
+</script>

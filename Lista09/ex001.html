@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div_resultado">
+        
+    </div>
+    <button  onclick="aumentar()">aumentar imagem</button>
+    <button onclick="diminuir()">Diminuir imagem</button>
+</body>
+</html>
+
+<script>
+    var largura = 100
+    var imagem = `<img src="https://cdn.meutimao.com.br/_upload/torcida-do-corinthians/g/foto/823/zeca-urubu-823181.jpg" style= "width:${largura}px;">`
+        div_resultado.innerHTML = imagem;
+    function aumentar() {
+        largura += 10
+        var imagem = `<img src="https://cdn.meutimao.com.br/_upload/torcida-do-corinthians/g/foto/823/zeca-urubu-823181.jpg" style= "width:${largura}px;">`
+        div_resultado.innerHTML = imagem;
+    }
+
+    function diminuir(){
+        largura -= 10
+        var imagem = `<img src="https://cdn.meutimao.com.br/_upload/torcida-do-corinthians/g/foto/823/zeca-urubu-823181.jpg" style= "width:${largura}px;">`
+        div_resultado.innerHTML = imagem;
+    }
+
+</script>
