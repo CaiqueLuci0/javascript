@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 14. Crie um programa que vá contando a idade do usuário e descrevendo sua fase na vida, considerando que: 
+
+- Primeira Infância: 0 a 4 anos 
+
+- Pré-escolar: + de 4 aos 6 anos 
+
+- Segunda Infância: + de 6 aos 10 anos 
+
+- Adolescência: + de 10 aos 18 anos 
+
+- Adulto: + de 18 até os 50 anos 
+
+- Melhor idade: + de 50 anos até 100 anos 
+
+- Matusalém: + de 100 anos 
+
+Assim, sua página HTML deve solicitar a idade do usuário. Na medida em que for digitando (pesquise por onkeyup), deve aparecer uma contagem de idade e indicação de fase da vida abaixo como neste exemplo: 
+
+0 anos (Primeira Infância) 
+
+1 anos (Primeira Infância) 
+
+2 anos (Primeira Infância) 
+
+3 anos (Primeira Infância) 
+
+4 anos (Primeira Infância) 
+
+5 anos (Pré-escolar) 
+
+6 anos (Pré-escolar) 
+
+7 anos (Segunda Infância) 
+
+.... 
+
+A última linha deve ser a idade informada -->
+
+Informe sua idade: <input type="text" onkeyup="fase()" id="input_idade">
+<div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function fase(){
+        var idade = Number(input_idade.value);
+        var repeticao = 0
+        var resultado = ``
+        while(repeticao <= idade){
+
+            if(repeticao >100) {
+                resultado += `${repeticao} anos (Matusalém)<br>`
+            } else if(repeticao >= 51) {
+                resultado += `${repeticao} anos (Melhor idade)<br>`
+            } else if(repeticao >= 19) {
+               resultado += `${repeticao} anos (Adulto)<br>`
+            } else if(repeticao >=11) {
+                resultado += `${repeticao} anos (Adolescência)<br>`
+            } else if(repeticao >=7){
+               resultado += `${repeticao} anos (Segunda Infância)<br>`
+            } else if(repeticao >=5){
+                resultado += `${repeticao} anos (Pré-escola)<br>`
+            } else{
+                 resultado += `${repeticao} anos (primeira infância)<br>`
+            }  
+            repeticao += 1
+        }
+        div_resultado.innerHTML = resultado
+    }
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 21. Refaça o programa anterior de tal forma que, a cada 3 depósitos o banco dê um bônus de 1% sobre o valor acumulado após o depósito. Ex: 
+
+    1º Mês: R$ 500.00 
+    2º Mês: R$ 1000.00 
+    3º Mês: R$ 1515.00 
+    4º Mês: R$ 2015.00 
+    5º Mês: R$ 2515.00 
+    6º Mês: R$ 3045.15 
+    Total guardado: R$3045.15 
+
+Note que nos meses 3 e 6, o valor aumentou em 1% do total após o depósito.  -->
+
+Quantos depositos fez: <input type="text" id="input_deposito">
+Quantidade depositada em cada: <input type="text" id="input_dinheiro">
+
+<button onclick="calcular()">Acompanhar grana</button>
+
+<div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var deposito = Number(input_deposito.value);
+        var quantidade = Number(input_dinheiro.value);
+        var mes = 1;
+        var acumulado = 0;
+        div_resultado.innerHTML="";
+
+        while (mes <= deposito){
+            acumulado += quantidade;
+            if(mes % 3 == 0) {
+                acumulado += acumulado * 0.01;
+            }
+            var resultado = `${mes}º Mês: R$ ${acumulado} <br>`;
+            if (mes == deposito){
+                resultado += `Total guardado: R$${acumulado} `
+            }
+            div_resultado.innerHTML += resultado;
+            mes += 1;
+        };
+    };
+</script>

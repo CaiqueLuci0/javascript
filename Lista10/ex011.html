@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 11. Crie um programa o qual: 
+
+a) Pergunte ao usuário quantas voltas um carro dará numa corrida 
+
+b) Ao clicar num botão "Iniciar corrida!"... 
+
+c) Exiba, debaixo do botão, frases como estas: 
+
+       Carro dando a 1ª volta 
+
+       Carro dando a 2ª volta 
+
+       Carro dando a 3ª volta 
+
+d) Até que o carro "termine" a corrida. Nesse caso, exiba abaixo de tudo, somente 1 vez, a frase: 
+
+       Corrida finalizada!  -->
+Quantidade de voltas <input id="input_qtdVoltas">
+<button onclick="corrida()">Iniciar corrida!</button>
+
+<div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function corrida(){
+        var voltas = Number(input_qtdVoltas.value);
+        var voltaAtual = 1;
+
+        div_resultado.innerHTML=``;
+
+            // while(voltaAtual <= voltas){
+
+            //     if (voltaAtual == voltas) {
+                //div_resultado.innerHTML += `Carro dando a ${voltaAtual}ª volta <br>`;
+            //         div_resultado.innerHTML += `Corrida finalizada!`;
+            //     } else if (voltaAtual < voltas) {
+            //         div_resultado.innerHTML += `Carro dando a ${voltaAtual}ª volta <br>`;
+            //     }
+
+            //     voltaAtual += 1;
+            // }
+
+        while(voltaAtual < voltas){
+            div_resultado.innerHTML += `Carro dando a ${voltaAtual}ª volta <br>`;
+            voltaAtual += 1;
+            if(voltaAtual == voltas) {
+                div_resultado.innerHTML += `Carro dando a ${voltaAtual}ª volta <br>`;
+                div_resultado.innerHTML += `Corrida finalizada!`;
+            };
+        };
+    };
+</script>

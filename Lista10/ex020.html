@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 20. Crie um programa no qual: 
+
+a) O usuário informa quantos depósitos ele fez no banco 
+
+b) O usuário informa o valor de cada depósito, pois ele sempre depositava exatamente o mesmo valor 
+
+c) Ao clicar em "Acompanhar grana", deve aparecer o valor, mês a mês, como neste exemplo 
+
+    1º Mês: R$ 500.00 
+    2º Mês: R$ 1000.00 
+    3º Mês: R$ 1500.00 
+    4º Mês: R$ 2000.00 
+    5º Mês: R$ 2500.00 
+    Total guardado: R$2500.00 
+
+No exemplo acima, o usuário informou 5 depósitos e 500 por depósito.  -->
+
+Quantos depositos fez: <input type="text" id="input_deposito">
+Quantidade depositada em cada: <input type="text" id="input_dinheiro">
+
+<button onclick="calcular()">Acompanhar grana</button>
+<div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var deposito = Number(input_deposito.value);
+        var quantidade = Number(input_dinheiro.value);
+        var mes = 1;
+        var acumulado = 0;
+        div_resultado.innerHTML="";
+
+        while (mes <= deposito){
+            acumulado += quantidade;
+            var resultado = `${mes}º Mês: R$ ${acumulado} <br>`;
+            if (mes == deposito){
+                resultado += `Total guardado: R$${acumulado} `
+            }
+            div_resultado.innerHTML += resultado;
+            mes += 1;
+        };
+    };
+</script>

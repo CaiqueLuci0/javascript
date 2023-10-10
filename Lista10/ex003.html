@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input_frase">
+    <br>
+    <button onclick="exibir()">exibir</button>
+    <div id="div_resultado">
+    </div>
+</body>
+</html>
+
+<script>
+    function exibir() {
+        div_resultado.innerHTML =``
+        var frase = input_frase.value;
+        var numero = 1;
+        while (numero <= 7){
+            div_resultado.innerHTML += numero + "."+ frase+ "<br>";
+            numero +=1;
+        }
+    }
+</script>

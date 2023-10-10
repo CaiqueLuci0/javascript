@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Crie um programa que simule a entrada de caronas num carro: 
+
+a) Pergunte ao usuário quantas pessoas, vão entrar no carro 
+
+b) Ao clicar num botão "#Partiu Carona"... 
+
+c) Exiba, debaixo do botão, frases como estas: 
+
+Entrou o 1º passageiro (que é o(a) motorista) 
+
+Entrou o 2º passageiro 
+
+Entrou o 3º passageiro 
+
+Entrou o 4º passageiro 
+
+Entrou o 5º passageiro 
+
+O 6º passageiro terá que esperar! 
+
+O 7º passageiro terá que esperar! 
+
+d) Note que, sempre na frase do 1º passageiro, deve constar ao lado que é motorista 
+
+e) A partir do 6º passageiro, a frase muda, pois o carro só comporta 5 passageiros 
+
+  -->
+  Quantidade de passageiros <input type="text" id="input_qtdPassageiros">
+  <button onclick="entrar()">#Partiu_Carona</button>
+  <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function entrar() {
+        var passageiros = Number(input_qtdPassageiros.value);
+        var repeticao = 1;
+        var resultado = ``;
+        while(repeticao <= passageiros){
+
+            if (repeticao == 1) {
+                resultado += `Entrou o 1º passageiro (que é o(a) motorista) <br>`
+            } else if (repeticao >= 2 && repeticao < 6) {
+                resultado += `Entrou o ${repeticao}º passageiro <br>`
+            } else {
+                resultado += `O ${repeticao}º passageiro terá que esperar! <br> `
+            };
+            repeticao += 1;
+        };
+        div_resultado.innerHTML = resultado;
+    };
+</script>

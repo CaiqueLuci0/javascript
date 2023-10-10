@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+Quantos depositos fez: <input type="text" id="input_deposito">
+Quantidade depositada em cada: <input type="text" id="input_dinheiro">
+
+<button onclick="calcular()">Acompanhar grana</button>
+
+<div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var deposito = Number(input_deposito.value);
+        var quantidade = Number(input_dinheiro.value);
+        var mes = 1;
+        var acumulado = 0;
+        div_resultado.innerHTML="";
+
+        while (mes <= deposito){
+            acumulado += quantidade;
+            
+            var resultado = `${mes}º Mês: R$ ${acumulado} <br>`;
+
+            if(mes % 3 == 0) {
+                acumulado += acumulado * 0.01;
+                resultado = `${mes}º Mês: R$ ${acumulado} <img width="10px" src="data:image/png;base64,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"> 
+                <br>`;
+            }
+            if (mes == deposito){
+                resultado += `Total guardado: R$${acumulado} `
+            }
+            div_resultado.innerHTML += resultado;
+            mes += 1;
+        };
+    };
+</script>
