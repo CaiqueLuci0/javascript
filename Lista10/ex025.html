@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- (DESAFIO) 25. Refaça a questão anterior, de tal forma que: 
+
+a) Ao exibir os divisores do número informado, caso o número seja divisível somente por 1 e por ele mesmo, exiba abaixo: 
+
+    "O número X é um número primo," -->
+
+    Insira um número de 0 a 100: <input id="input_numero">
+    <button onclick="dividir()">Ver divisores</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function dividir() {
+        var numero = Number(input_numero.value);
+        var numeroAtual = 1;
+        var resultado = "";
+
+        while(numeroAtual <= numero){
+            if(numero % numeroAtual == 0) {
+                resultado += `${numeroAtual} <br>`
+
+                if(numeroAtual != 1){
+                    if(numeroAtual == 2 || numeroAtual == 3 || numeroAtual == 5 || numeroAtual == 7) {
+                        resultado += `O número ${numeroAtual} é um número primo, <br>`
+                    } else if(numeroAtual % 2 != 0 && numeroAtual % 3 != 0 && numeroAtual % 5 != 0 && numeroAtual % 7 != 0){
+
+                        resultado += `O número ${numeroAtual} é um número primo, <br>`
+
+                    }
+                } 
+            } 
+
+            numeroAtual += 1;
+        };
+
+        div_resultado.innerHTML = resultado;
+    }
+</script>

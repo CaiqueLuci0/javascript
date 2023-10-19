@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 27. Crie um programa o qual: 
+
+a) Receba um número positivo do usuário, que é o limite da contagem;
+
+b) Receba um segundo número, para testes de divisibilidade, que deve estar entre 1 e o número informado em a);
+
+c) Ao clicar em "Somar Números", deve exibir todos os números múltiplos do número informado em b)  entre 1 e o número informado em a); 
+
+d) Ao final da contagem, exiba a frase "Soma dos Múltiplos: X", sendo X a soma de todos os números múltiplos do número informado pelo usuário -->
+
+Insira um número positivo <input id="input_positivo"><br>
+Insira um número para testar divisibilidade <input type="input_divi"><br>
+
+<button onclick="somar()">Somar números</button>
+
+<div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function somar(){
+        var limite = Number(input_positivo.value);
+        var divisor = Number(input_divi.value);
+
+        var numeroAtual = 0;
+        var resultado =``;
+
+        if(divisor <= limite){
+            while(numeroAtual <= limite){
+            if(numeroAtual % divisor == 0){
+                resultado += `${numeroAtual} <br>`;
+            };
+            numeroAtual += 1;
+            };
+
+            div_resultado.innerHTML = resultado;
+        }
+    };
+</script>

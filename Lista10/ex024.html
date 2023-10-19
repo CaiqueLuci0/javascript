@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- a) Receba um número do usuário, que deve estar entre 0 e 100;
+
+b) Ao clicar no botão "Ver Divisores", deve exibir na tela, abaixo do botão, todos os divisores do número informado, como o exemplo abaixo, onde o usuário inseriu o número "10": 
+
+     Divisores do Número 10:
+
+     1
+
+     2
+
+     5
+
+     10
+
+OBS: para saber se o número é divisível por outro, o resto da divisão deve ser 0;   -->
+
+Insira um número de 0 a 100: <input id="input_numero">
+<button onclick="dividir()">Ver divisores</button>
+
+<div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function dividir() {
+        var numero = Number(input_numero.value);
+        var numeroAtual = 1;
+        var resultado = "";
+
+        while(numeroAtual <= numero){
+            if(numero % numeroAtual == 0) {
+                resultado += `${numeroAtual} <br>`
+            }
+            numeroAtual += 1;
+        }
+
+        div_resultado.innerHTML = resultado;
+    }
+</script>

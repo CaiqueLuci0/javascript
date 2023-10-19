@@ -41,5 +41,62 @@ e) Ao final, sem apagar as mensagens anteriores mostre as seguintes mensagens:
     function dividir() {
         var inferior = Number(input_inferior.value);
         var superior = Number(input_superior.value);
+        var dividido = Number(input_dividido.value);
+
+        var numeroAtual = inferior;
+        var numerosExibidos = 0;
+        var somatoria = 0;
+        var maiorNumero = 0;
+        var menorNumero = 0;
+
+        var conta = ``;
+
+        if (inferior < 1){
+
+            alert(`Não o número inferior deve ser maior que 1`);
+        } else if (superior <= inferior || superior > 100) {
+            alert(`O número superior deve ser maior que número inferior e menor do que 100`)
+        }else if(dividido < 3 || dividido >10){
+            alert(`O número que será dividido deve estar entre 10 e 3`)
+        } else {
+
+            while(menorNumero == 0){
+
+                if(dividido % numeroAtual == 0){
+                    menorNumero = numeroAtual;
+                };
+                numeroAtual += 1;
+            };
+
+            numeroAtual = inferior;
+
+            while(numeroAtual <= superior){
+                var media =  somatoria / numerosExibidos;
+            
+                if (dividido % numeroAtual== 0) {
+                    numerosExibidos += 1;
+                    somatoria += numeroAtual;
+                    conta += `${numeroAtual}, `;
+
+                    maiorNumero = numeroAtual;
+                }
+
+                var resultado = `
+                <br> QUANTIDADE TOTAL DE NÚMEROS EXIBIDOS: ${numerosExibidos} <br> 
+
+                SOMATÓRIO DOS NÚMEROS EXIBIDOS: ${somatoria} <br>
+
+                MÉDIA DOS NÚMEROS EXIBIDOS: ${media} <br>
+
+                MAIOR NÚMERO EXIBIDO: ${maiorNumero} <br>
+
+                MENOR NÚMERO EXIBIDO: ${menorNumero} <br>
+                `;
+                numeroAtual += 1;
+                div_resultado.innerHTML = conta + resultado;
+            }
+
+            
+        }
     }
 </script>
