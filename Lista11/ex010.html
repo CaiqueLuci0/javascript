@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do onibus <input type="text" id="input_onibus"> <br>
+    <button onclick="gravar()">Gravar busão</button>
+    <div id="div_resultado"></div>
+    Pesquisar por linha: <input type="text" id="input_pesquisa"> <br>
+    <button onclick="pesquisar()">Pesquisar</button>
+</body>
+</html>
+
+<script>
+    var osOnibus = [];
+
+    function gravar(){
+        osOnibus.push(input_onibus.value);
+        lista = ``
+        for(var index = osOnibus.length - 1 ; index > -1 ; index -= 1){
+            lista += `${index + 1} - ${osOnibus[index]} <br>`;
+        };
+
+        div_resultado.innerHTML = lista;
+    };
+
+    function pesquisar(){
+        for(var index)
+    }
+</script>

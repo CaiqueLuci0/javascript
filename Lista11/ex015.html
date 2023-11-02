@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do produto <input type="text" id="input_produto"> <br>
+    Preço da compra <input type="text" id="input_preco"> <br>
+    <button onclick="cadastrar()">Cadastrar produto</button>
+    <button onclick="exibirEstoque()">Relatório de estoque</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    var produtos = [];
+    var precos = [];
+    var maiorpreco = 0;
+    var menorpreco = 0;
+    var produtoMaisBarato = '';
+    var produtoMaisCaro = '';
+    function cadastrar() {
+        var preco = Number(input_preco.value)
+        produtos.push(input_produto.value);
+        precos.push(preco);
+
+        var index = 0;
+        menorpreco = precos[0];
+        while(index <= precos.length - 1){
+            if(precos[index] > maiorpreco){
+                maiorpreco = precos[index];
+                produtoMaisCaro = produtos[index];
+            };
+            if(precos[index] <= menorpreco){
+               menorpreco = precos[index]; 
+               produtoMaisBarato = produtos[index];
+            };
+            index += 1;
+        };
+    };
+
+    function exibirEstoque(){
+        var resultado = `Total de produtos: ${produtos.length}`;
+        var somatoria = 0;
+        var somatoriaVenda = 0;
+        for(var index = 0; index <= produtos.length - 1; index += 1){
+            somatoria += precos[index];
+
+            somatoriaVenda += precos[index] + (precos[index] * 0.25);
+
+            resultado += `
+            <br>
+            Produto ${index + 1}: ${produtos[index]} 
+            <br>
+            Preço de compra: R$${precos[index]}. Vender por R$${precos[index] + (precos[index] * 0.25)} <br>
+            `;
+        };
+        var mediaPrecoVenda = somatoriaVenda / precos.length
+        var relatorio = `
+        a) O nome do produto mais caro: ${produtoMaisCaro}; <br>
+
+        b) O nome do produto mais barato: ${produtoMaisBarato}; <br>
+
+        c) A soma dos preços de compra dos produtos ${somatoria}; <br>
+
+        d) A média de preço de venda dos produtos ${mediaPrecoVenda}.
+        `
+        div_resultado.innerHTML = resultado + relatorio;
+    };
+</script>

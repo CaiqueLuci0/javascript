@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     Projeto: <input type="text" id="input_projeto"> <br>
+     <button onclick="cadastrar()">Cadastrar</button>
+     <button onclick="exibirLista()">Exibir Lista</button>
+
+     <div id="div_resultado"></div>
+     <div id="div_lista"></div>
+</body>
+</html>
+
+<script>
+    var projetos = [];
+
+    function cadastrar(){
+        projetos.push(input_projeto.value);
+        var resultado = ``;
+        if(projetos.length < 5){
+            resultado = `Você já fez ${projetos.length} projetos. Por isso você é um profissional Júnior `;
+        } else if(projetos.length < 12){
+            resultado = `Você já fez ${projetos.length} projetos. Por isso você é um profissional Pleno `;
+        } else {
+            resultado = `Você já fez ${projetos.length} projetos. Por isso você é um profissional Sênior `;
+        };
+
+        div_resultado.innerHTML = resultado;
+    };
+
+    function exibirLista(){
+        lista = ``;
+        for(var index = projetos.length - 1; index > -1 ; index -= 1){
+            lista += `${index + 1} - ${projetos[index]}<br>`;
+        };
+        div_lista.innerHTML = lista
+    }
+</script>

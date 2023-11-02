@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="input_pesquisar"> <br>
+    <button onclick="pesquisarFruta()">Pesquisar fruta</button>
+
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function pesquisarFruta() {
+        var frutas = ["jabuticaba", "cajamanga", "pera", "manga", "banana", "laranja", "bergamota"];
+        var pesquisandoPor = input_pesquisar.value;
+        for (var posicao = 0; posicao <= frutas.length; posicao += 1) {
+            if (frutas[posicao] == pesquisandoPor.toLowerCase()) {
+                div_resultado.innerHTML = `a fruta ${pesquisandoPor} existe na lista`
+                break;
+            } else {
+                div_resultado.innerHTML = `a fruta ${pesquisandoPor} não existe na lista`
+            }
+        }
+    }
+</script>

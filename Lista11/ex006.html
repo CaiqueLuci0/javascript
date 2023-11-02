@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    filme: <input id="input_filme"> <br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    var filmes = [];
+    function cadastrar(){
+        var filme = input_filme.value;
+        filmes.push(filme);
+        var lista = ``;
+        for(var index = 0; filmes.length > index; index += 1){
+            lista += `${index + 1} - ${filmes[index]} <br>`;
+        };
+        div_resultado.innerHTML = lista;
+    };
+</script>

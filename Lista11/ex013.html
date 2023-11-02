@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Indique o resultado:
+    <select name="" id="select_resultado">
+        <option value="vitoria">Vitória</option>
+        <option value="empate">Empate</option>
+        <option value="derrota">Derrota</option>
+    </select>
+    <button onclick="registrar()">Registrar Jogo</button>
+    <br>
+    Indique o jogo que quer saber o resultado:<input type="text" id="input_jogo" onkeyup="exibirResultado()">
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    resultados = [];
+    qtdVitorias = 0;
+    qtdDerrotas = 0;
+    qtdEmpates = 0;
+    function registrar() {
+        var resultado = select_resultado.value;
+        resultados.push(resultado);
+
+        if (resultado == 'vitoria') {
+            qtdVitorias += 1;
+        } else if (resultado == 'empate') {
+            qtdEmpates += 1;
+        } else {
+            qtdDerrotas += 1;
+        };
+
+        var pontosPossiveis = (qtdVitorias + qtdDerrotas + qtdEmpates) * 3
+        var pontuacaoTotal = (qtdVitorias * 3) + qtdEmpates
+        div_resultado.innerHTML = `
+        O time teve: ${qtdVitorias} vitórias, ${qtdEmpates} empates, ${qtdDerrotas} derrotas 
+        <br>
+        Pontuação total: ${pontuacaoTotal} pontos 
+        <br>
+        Aproveitamento: ${pontuacaoTotal * 100 / pontosPossiveis}%
+        `
+    };
+
+    function exibirResultado() {
+        var jogo = Number(input_jogo.value);
+        if (jogo <= resultados.length) {
+            if (jogo > 0) {
+                if (resultados[jogo - 1] == 'vitoria') {
+                    var resultadoDoJogo = 'ganhou';
+                } else if (resultados[jogo - 1] == 'empate') {
+                    var resultadoDoJogo = 'empatou';
+                } else {
+                    var resultadoDoJogo = 'perdeu';
+                };
+                div_resultado.innerHTML += ` 
+                <br>No ${jogo}º jogo, o time ${resultadoDoJogo}.
+                `;
+            };
+
+        } else {
+            div_resultado.innerHTML += `
+            <br>O ${jogo}º jogo ainda não foi cadastrado
+            `;
+        };
+    };
+</script>
