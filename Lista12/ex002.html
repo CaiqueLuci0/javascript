@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <button onclick="exibirTime()">Exibir time</button>
+    <div id="div_resultado"></div>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    var src = ["https://seeklogo.com/images/S/Sao_Paulo_Futebol_Clube-logo-F291AB0A19-seeklogo.com.png" , "https://seeklogo.com/images/C/Corinthians_Bras_and__227_o-logo-E92E44B595-seeklogo.com.png", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVkM8ZO8jAT3Np7np7bHBo7uOeGWtnTObf-9lz-W8&s", "https://logodownload.org/wp-content/uploads/2016/09/flamengo-logo-escudo-novo.png" ]
+
+    function exibirTime(){
+        div_resultado.innerHTML = `<img width="150px" src="${src[parseInt(Math.random() * src.length) ]}">`
+    }
+</script>
+

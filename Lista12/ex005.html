@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="jogar()">Jo-ken-po</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    var gesto = ["https://www.bigmae.com/wp-content/uploads/2010/07/tesoura.png","https://www.bigmae.com/wp-content/uploads/2010/07/jogo-papel-pedra-tesoura.jpg","https://www.bigmae.com/wp-content/uploads/2010/07/pedra.png"]
+    function jogar(){
+        div_resultado.innerHTML = `<img width="200px" src="${gesto[parseInt(Math.random() * gesto.length)]}">`
+    }
+</script>

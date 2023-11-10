@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div_formulario">
+    <h1>Análise de performance de Alunos - Registro</h1>
+    Entre com o nome do aluno: <input id="input_nomeAluno"> <br>
+    Entre com a nota da sprint1 do aluno: <input id="input_notaS1"> <br>
+    Entre com a nota da sprint2 do aluno: <input id="input_notaS2"> <br>
+    Entre com a nota da sprint3 do aluno: <input id="input_notaS3"> <br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="analisar()">Analisar</button>
+    </div>
+    <div id="div_resultado">
+    </div>
+
+</body>
+</html>
+
+<script>
+    var alunos = [];
+    var notas = [];
+    function cadastrar(){
+        var nome = input_nomeAluno.value;
+        var nota = Number(input_notaAluno.value);
+        if(nome == `` || nota < 0 || nota > 10){
+            alert(`O campo nome deve estar preenchido e a nota deve estar entre 0 e 10`);
+        } else{
+            alunos.push(nome);
+            notas.push(nota);
+
+            var index = alunos.length - 1;
+            var lista = ``;
+            while(index >= 0){
+                lista += `Nome do aluno: ${alunos[index]} - Nota: ${notas[index]} <br>`;
+                index -= 1;
+            };
+            div_resultado.innerHTML = lista
+        };
+
+    };
+
+    function analisar(){
+        div_formulario.innerHTML = `
+        <h1>Análise de performance de Alunos - Registro</h1>
+        Entre com o intervalo de notas: <input placeholder="DE" id="input_min"> <input placeholder="ATÉ" id="input_max"> <br>
+        <button onclick="pesquisar()">Pesquisar</button>
+        `;
+        div_resultado.innerHTML = '';
+    };
+
+    function pesquisar(){
+        var minimo = Number(input_min.value);
+        var maximo = Number(input_max.value);
+        if(minimo < 0 || maximo < 0 || minimo > 10 || maximo > 10){
+            alert(`Os dois campos devem ter valores entre 0 e 10`);
+        } else if(minimo > maximo){
+            alert(`"DE" deve ser menor ou igual "ATÉ"`)
+        } else {
+            var index = 0;
+            var lista = ``;
+            var somatoria = 0;
+            var maiorNota = notas[0];
+            var menorNota = notas[0];
+            var alunosListados = 0
+            while(index < alunos.length){
+                if(notas[index] <= maximo && notas[index] >= minimo){
+                    lista += `O aluno ${alunos[index]} ficou com a nota ${notas[index]} <br>`
+                    alunosListados += 1;
+                };
+
+                if(notas[index] > maiorNota){
+                    maiorNota = notas[index];
+                }else if(notas[index] < menorNota){
+                    menorNota = notas[index];
+                };
+                somatoria += notas[index];
+                index += 1;
+            }
+            var media = somatoria / notas.length;
+
+            lista += `
+            <br>
+            Total de alunos registrados: ${alunos.length} <br>
+
+            Total de alunos listado:${alunosListados} <br>
+
+            Maior Nota: ${maiorNota} <br>
+
+            Menor Nota: ${menorNota} <br>
+
+            Média da Nota: ${media} <br>
+            `
+            div_resultado.innerHTML = lista
+        };
+    };
+</script>

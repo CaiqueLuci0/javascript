@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="aleatorio()">Sortear</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function aleatorio(){
+        var numero = Math.random()
+
+        if(numero > 0.5){
+            var frase = `Eu arredondaria para 1`
+        } else {
+            var frase = `Eu arredondaria para 0`
+        }
+
+        div_resultado.innerHTML = `${numero} <br> ${frase}`
+    }
+</script>

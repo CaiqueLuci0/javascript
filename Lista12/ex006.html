@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sortear()">Sortear momento do dia</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function sortear(){
+        var hora = parseInt(Math.random() * 24);
+
+        if(hora >= 0 && hora <= 11){
+            var frase = `Bom dia, flor do dia, são ${hora}h!`
+        } else if(hora <= 17){
+            var frase = `Boa tarde, já vai tarde! São ${hora}h!`
+        } else {
+            var frase = `Boa noite, durma bem! São ${hora}h!`
+        }
+
+        div_resultado.innerHTML = frase;
+    };
+</script>
